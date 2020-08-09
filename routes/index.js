@@ -38,7 +38,7 @@ app.post("/act", (req, res) => {
   const addr = req.body.address;
 
   fetch(
-    `https://www.googleapis.com/civicinfo/v2/representatives?key=${config.googleKey}&address=${addr}&roles=legislatorUpperBody&roles=legislatorLowerBody`,
+    `https://www.googleapis.com/civicinfo/v2/representatives?key=${config.googleKey}&address=${addr}&levels=administrativeArea1&levels=administrativeArea2&levels=country`,
     {
       method: "GET",
       headers: {

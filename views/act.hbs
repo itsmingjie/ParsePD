@@ -1,5 +1,5 @@
-{{#extend 'title'}}Act Now &ensp; Defund the Police{{/extend}}
-{{#extend 'description'}}Reach out to your congressional representatives and ask them to defund the police!{{/extend}}
+{{#extend 'title'}}Act Now: Defund the Police{{/extend}}
+{{#extend 'description'}}Reach out to your local representatives and ask them to defund the police!{{/extend}}
 {{#extend 'actionButton'}}<a href="/">« Back</a>{{/extend}}
 
 <div class="card tips">
@@ -28,7 +28,7 @@
 <div class="columns is-multiline is-mobile">
 
   {{#each officials}}
-  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile" data-official="{{name}}" data-aos="fade-up" data-aos-delay="{{delay @index 50}}">
     <div class="card">
 
       <div class="card-content">

@@ -8,7 +8,8 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Recursive:wght@300..800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/styles/global.css" />
-  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
   {{{block 'head-inject'}}}
 </head>
@@ -46,6 +47,11 @@
   </footer>
 
   <script src="https://use.fontawesome.com/releases/v5.3.1/js/all.js" type="text/javascript" defer></script>
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
   {{{block 'foot-inject'}}}
 </body>
 
