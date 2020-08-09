@@ -49,17 +49,6 @@ app.post("/act", (req, res) => {
     .then((response) => response.json())
     .then((data) => {
       if (data.officials) {
-        data.officials.forEach((official) => {
-          if (
-            official.urls[0].indexOf(".gov") !== -1 &&
-            official.urls[0].indexOf("email") === -1
-          ) {
-            official.urls[0] =
-              official.urls[0].substring(official.urls[0].length - 1) === "/"
-                ? official.urls[0] + "contact/"
-                : official.urls[0] + "/contact/";
-          }
-        });
         res.render("act", {
           title: "Act Now: Defund the Police",
           officials: data.officials,
