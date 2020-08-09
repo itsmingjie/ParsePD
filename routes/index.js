@@ -3,7 +3,6 @@ const spending = require("../data/spending");
 const bodyParser = require("body-parser");
 const fetch = require("node-fetch");
 const config = require("../config");
-const e = require("express");
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -57,8 +56,8 @@ app.post("/act", (req, res) => {
           ) {
             official.urls[0] =
               official.urls[0].substring(official.urls[0].length - 1) === "/"
-                ? official.urls[0] + "contact/email"
-                : official.urls[0] + "/contact/email";
+                ? official.urls[0] + "contact/"
+                : official.urls[0] + "/contact/";
           }
         });
         res.render("act", {

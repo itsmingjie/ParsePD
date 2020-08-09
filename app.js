@@ -2,11 +2,30 @@ const express = require('express')
 const exphbs = require('express-handlebars')
 const path = require('path')
 const sassMiddleware = require('node-sass-middleware')
+const minifyHTML = require('express-minify-html')
+const compression = require('compression')
 
 const app = express()
 const http = require('http').createServer(app)
 const helpers = require('./lib/helpers')
 const hbs = exphbs.create({ helpers: helpers, extname: '.hbs' })
+
+app.use(
+  minifyHTML({
+    override: true,
+    exception_url: false,
+    htmlMinifier: {
+      removeComments: true,
+      collapseWhitespace: true,
+      collapseBooleanAttributes: true,
+      removeAttributeQuotes: true,
+      removeEmptyAttributes: true,
+      minifyJS: true,
+      minifyCSS: true
+    }
+  })
+)
+app.use(compression())
 
 const config = require('./config')
 
