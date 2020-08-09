@@ -1,0 +1,55 @@
+{{#extend 'title'}}{{../state}} – ParsePD{{/extend}}
+{{#extend 'actionButton'}}<a href="/">« Back</a>{{/extend}}
+
+<div class="box">
+  
+<canvas id="chart"></canvas>
+</div>
+
+{{> contact}}
+
+{{#extend 'foot-inject'}}
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+<script>
+  const spendingData = {{{ ../spendingData }}}
+  const averageData = {{{ ../averageData }}}
+
+  let ctx = document.getElementById('chart').getContext('2d');
+
+  const police = []
+  const avg = []
+
+  for (let el in spendingData) {
+    police.push(spendingData[el]["Police Protection Expenditure"])
+    avg.push(averageData[el]["Police Protection Expenditure"])
+  }
+
+
+  let chart = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: Array.from(Array(14).keys()).map(v => v + 2004),
+      datasets: [{
+        data: police,
+        label: "Police Expenditure ($) Per Capita",
+        backgroundColor: {{#if ../blue}} 'rgba(51,51,255,.7)'{{else}} 'rgba(228,45,64, .7)'{{/if}},
+        yAxisID: "spending"
+      }, {
+        data: avg,
+        label: "Average U.S. Police Expenditure Per Capita",
+        backgroundColor: 'rgba(150, 150, 150, .5)',
+        yAxisID: "spending"
+      }]
+    },
+    options: {
+      scales: {
+        yAxes: [{
+          id: "spending",
+          position: "left"
+        }]
+      }
+    }
+  })
+
+</script>
+{{/extend}}

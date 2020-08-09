@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{{block 'title'}}}</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Recursive:wght@300..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/styles/global.css" />
+
+  {{{block 'head-inject'}}}
+</head>
+
+<body>
+  <div class="Site-Content">
+    {{> navbar}}
+
+    <section class="hero is-dark is-medium">
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="title">{{{title}}}</h1>
+          <p>{{block "description"}}</p>
+          <p class="cta">{{{block "actionButton"}}}</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        {{{body}}}
+      </div>
+    </section>
+  </div>
+
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <p>
+        <strong>ParsePD</strong> built with 💖 by <a href="https://mingjie.dev" target="_blank">Mingjie Jiang</a> and <a
+          href="https://linkedin.com/in/larissatsai" target="_blank">Larissa Tsai</a> at PlexHacks. <strong>Go Bears! 🐻</strong>
+      </p>
+      <p><a href="/credits">Credits & Sources</a></p>
+    </div>
+  </footer>
+
+  <script src="https://use.fontawesome.com/releases/v5.3.1/js/all.js" type="text/javascript" defer></script>
+  {{{block 'foot-inject'}}}
+</body>
+
+</html>

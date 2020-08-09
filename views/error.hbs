@@ -1,0 +1,12 @@
+{{#extend 'actionButton'}}<a href="/">« Back</a>{{/extend}}
+
+{{#if address}}
+
+<p>Sorry, we're unable to find representatives for <strong>"{{address}}"</strong>. Please double check your address, or
+  simply enter your ZIP code or an address nearby to find your closest congressional representatives.</p>
+{{> contact}}
+
+{{else}}
+<p>Sorry, we can't find the page you're looking for. Try again?</p>
+
+{{/if}}

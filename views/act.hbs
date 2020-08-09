@@ -1,0 +1,64 @@
+{{#extend 'title'}}Act Now &ensp; Defund the Police{{/extend}}
+{{#extend 'description'}}Reach out to your congressional representatives and ask them to defund the police!{{/extend}}
+{{#extend 'actionButton'}}<a href="/">« Back</a>{{/extend}}
+
+<div class="card tips">
+  <header class="card-header">
+    <p class="card-header-title">
+      Tips for reaching out to your representatives...
+    </p>
+  </header>
+  <div class="card-content">
+    <ul>
+      <li>Include a clear and concise subject line. (ex: Police Funding)</li>
+      <li>Greet them! (ex: Representative Doe)</li>
+      <li>Introduce yourself by name and mailing address, as many representatives will not respond to people who are not
+        their constituents.</li>
+      <li>State your desires in a positive manner.</li>
+      <li>Explain your reasoning. (You can use facts from the home page of this website!)</li>
+      <li>Include personal, moving anecdotes if you have any.</li> 
+      <li>Try to keep the entire email less than 500 words
+        to keep their attention.</li>
+      <li>Inquire about how they plan to approach the issue.</li>
+      <li>Be appreciative and thank them for their time. (It will help convince them to listen to you.)</li>
+    </ul>
+  </div>
+</div>
+
+<div class="columns is-multiline is-mobile">
+
+  {{#each officials}}
+  <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="card">
+
+      <div class="card-content">
+        <article class="media">
+          <figure class="media-left">
+            <p class="image is-64x64 is-square">
+              <img src="{{#if photoUrl}}{{photoUrl}}{{else}} /assets/images/usa.png{{/if}}"
+                style="object-fit: cover; object-position: top;" class="is-rounded">
+            </p>
+          </figure>
+          <div class="media-content">
+            <div class="content">
+              <p>
+                <strong>{{name}}</strong>
+              </p>
+
+              <p><strong>Phone: </strong> <a href="tel:{{phones}}">{{phones}}</a>
+              {{#if emails}}<p><strong>Email: </strong><a href="mailto:{{emails}}">{{emails}}</a></p>{{/if}}
+              </p>
+              <p><strong></strong>{{address.0.line1}}<br />
+              </p>
+              {{#if address.0.line2}}<p>{{address.0.line2}}</p>{{/if}}
+              <p>{{address.0.city}}, {{address.0.state}} {{address.0.zip}}</p>
+              <p><strong><a href="{{urls}}" target="_blank">Contact Website »</a></strong></p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+
+  </div>
+  {{/each}}
+</div>

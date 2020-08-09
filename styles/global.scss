@@ -1,0 +1,171 @@
+@import "../node_modules/bulma/sass/utilities/initial-variables.sass";
+
+@import "../node_modules/bulma/sass/utilities/functions.sass";
+
+$family-sans-serif: "Recursive", sans-serif;
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.Site-Content {
+  flex: 1;
+
+  p {
+    margin-bottom: 1rem;
+  }
+}
+
+.card {
+
+  border-radius: 10px !important;
+}
+
+.card.state {
+  transition: all 0.3s ease 0s;
+  border-collapse: collapse;
+  box-shadow:
+    0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1),
+    0 0 0 1px rgba(10, 10, 10, 0.02);
+
+  .card-content {
+    // background-color: #f7f2ff;
+    background-color: #fff;
+
+    .title {
+      font-size: 1.2rem;
+      font-weight: 800;
+    }
+  }
+
+  &.is-blue {
+    &:hover {
+      box-shadow: 0 15px 20px rgba(51, 51, 255, 0.5);
+      transform: translateY(-7px);
+    }
+  }
+
+  &.is-red {
+    &:hover {
+      box-shadow: 0 15px 20px rgba(228, 45, 64, 0.5);
+      transform: translateY(-7px);
+    }
+  }
+}
+
+.contact-cta {
+  margin-top: 2rem;
+  box-shadow:
+    0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1),
+    0 0 0 1px rgba(10, 10, 10, 0.02);
+  background:
+    linear-gradient(
+      transparent,
+      rgba(0, 0, 0, 0.3) 40%,
+      rgba(0, 0, 0, 0.5) 100%
+    ),
+    url("/assets/images/congress-2.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 18rem;
+
+  .title {
+    font-weight: 800;
+    text-align: center;
+    color: #fff;
+    text-shadow: rgb(0, 0, 0) 0 1px 4px;
+    margin-top: 3rem;
+  }
+
+  .input {
+    box-shadow:
+      0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1),
+      0 0 0 1px rgba(10, 10, 10, 0.02);
+  }
+
+  .button {
+    font-weight: 800;
+  }
+
+  form {
+    margin: 0 10%;
+  }
+
+  .hint {
+    color: #eee;
+    font-size: small;
+    text-align: center;
+    font-weight: 500;
+    text-shadow: rgb(0, 0, 0) 0 1px 4px;
+  }
+}
+
+.hero.is-dark {
+  background:
+    linear-gradient(
+      transparent,
+      rgba(0, 0, 0, 0.3) 40%,
+      rgba(0, 0, 0, 0.5) 100%
+    ),
+    url("/assets/images/police-2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  text-shadow: rgb(0, 0, 0) 0 1px 4px;
+
+  .title {
+    font-weight: 800;
+    color: #fff;
+    font-size: 3rem;
+  }
+
+  p {
+    
+    font-size: 1.2rem;
+  }
+
+  .cta {
+    margin-top: 2rem;
+
+    a {
+      font-size: 1.2rem;
+      color: #fff;
+    }
+  }
+}
+
+.chart {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.tips {
+  margin-bottom: 2rem;
+
+  .title {
+    font-size: 1.2rem;
+  }
+
+  ul {
+    list-style-type: square;
+    margin-left: 2rem;
+  }
+}
+
+.article {
+  p {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    line-height: 2;
+    max-width: 80ch;
+    margin: .5rem auto 1rem;
+  }
+
+}
+// css here
+
+@import "../node_modules/bulma/bulma.sass";
