@@ -33,7 +33,6 @@ app.get("/", (req, res) => {
   });
 });
 
-
 app.post("/act", (req, res) => {
   const addr = req.body.address;
 
@@ -63,11 +62,11 @@ app.post("/act", (req, res) => {
 });
 
 app.get("/about", (req, res) => {
-  res.render("about", {title: "About"});
+  res.render("about", { title: "About" });
 });
 
 app.get("/credits", (req, res) => {
-  res.render("credits", {title: "Credits & Sources"});
+  res.render("credits", { title: "Credits & Sources" });
 });
 
 app.get("/:state", (req, res) => {
@@ -77,7 +76,7 @@ app.get("/:state", (req, res) => {
     res.render("error", { title: "ERROR: NOT FOUND" });
   } else {
     res.render("state", {
-      title: states[state].name + " State Police Expenditure",
+      title: states[state].name + " Police Expenditure",
       blue: states[state].blue,
       state: state,
       stateName: states[state].name,
